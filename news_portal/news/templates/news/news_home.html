@@ -3,10 +3,22 @@
 {% block title %} World news {% endblock%}
 
 {% block content %}
-<div class="features">
-    <h1>HOME PAGE</h1>
-    <button type="button" class="btn btn-warning">Read news</button>
-    <h1> HELOOOOOOOOOOOOOOOOOOOOOOOOOOOO</h1>
-    </div>
-    <h1> HELOOOOOOOOOOOOOOOOOOOOOOOOOOOO</h1>
+    <div class="features">
+        <h1>NEWS PAGE</h1>
+        {% if news %}
+                {% for element in news %}
+                <div class="alert alert-warning">
+                    <h3>{{ element.title }}</h3>
+                    <p>{{ element.anons }}</p>
+        <!--                {{ element.full_text }}-->
+                </div>
+                {% endfor %}
+        {% else %}
+            <p>You have no news</p>
+        {% endif %}
+<!--        <button type="button" class="btn btn-warning">Read news</button>-->
+<!--    <br>-->
+<!--        {{ news }}-->
+<!--    </div>-->
+
 {% endblock %}
